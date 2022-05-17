@@ -4,8 +4,8 @@ import CartStore from "../../utils/CartStore";
 import { ShoppingCartItem } from "../ShoppingCartItem";
 import { Header } from "../Header";
 
-const Shoppingcart = () => {
-  const history = useNavigate();
+function Shoppingcart() {
+  const navigate = useNavigate();
 
   const [cart, setCart] = useState([]);
   const [totalAmount, setTotalAmount] = useState(0);
@@ -27,7 +27,7 @@ const Shoppingcart = () => {
 
   let handleOrderClick = () => {
     CartStore.dispatch({ type: "clear" });
-    history.push("/confirm");
+    navigate("/confirm");
   };
 
   useEffect(() => {
@@ -71,5 +71,5 @@ const Shoppingcart = () => {
       </table>
     </div>
   );
-};
+}
 export default Shoppingcart;
