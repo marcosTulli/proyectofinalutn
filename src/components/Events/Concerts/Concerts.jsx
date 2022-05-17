@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { EventListItem } from "../EventListItem";
 
-const Eventlist = () => {
+const Concerts = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
@@ -36,4 +36,4 @@ const Eventlist = () => {
     </div>
   );
 };
-export default Eventlist;
+export default Concerts;

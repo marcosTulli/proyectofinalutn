@@ -1,8 +1,6 @@
 DONE:
 
 
-
-
 TODO: 
 
 -  Crear una pagina principal con boton de login
@@ -21,13 +19,6 @@ TODO:
    - Informacion del artista en forma de card? 
  - Cart: 
    - Formulario
--  Acceder a un menú desplegable que contendrá las categorías.
--  Crear 4 categorias: 
-                     - Conciertos
-                     - Deportes
-                     - Cine
-                     - Teatro
--  Solo la categoria de Conciertos va a tener items a mostrar.
 -  Debe tener al menos un formulario (login, contacto, suscripción, compra).
    - El formulario va a estar antes del checkout
 -  Al clickear en una, debe navegar a la lista de productos o información de
@@ -40,3 +31,4 @@ TODO:
    la cantidad de items incluidos agregados.
 -  Checkout mínimo:
 -  Formulario para nombre, apellido y teléfono u otros datos necesarios.
+

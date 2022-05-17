@@ -1,5 +1,6 @@
 import React from "react";
 import CartStore from "../../utils/CartStore";
+import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 
 const Shoppingcartitem = ({ event }) => {
   return (
@@ -34,7 +35,9 @@ const Shoppingcartitem = ({ event }) => {
           onClick={() =>
             CartStore.dispatch({ type: "delete", payload: event })
           }>
-          <span className="bi bi-trash-fill font-large text-dark"></span>
+          <span className="bi bi-trash-fill font-large text-dark">
+            <CloseOutlinedIcon />
+          </span>
         </button>
       </td>
     </tr>

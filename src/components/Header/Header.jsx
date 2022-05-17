@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import CartStore from "../../utils/CartStore";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import CustomizedMenus from "../Categories/Categories";
+import CategoriesMenu from "../Categories/Categories";
 
 const Header = () => {
   const [itemCount, setItemCount] = useState(0);
@@ -47,7 +47,7 @@ const Header = () => {
           </ul>
         </div>
       </div>
-      <CustomizedMenus />
+      <CategoriesMenu />
     </nav>
   );
 };

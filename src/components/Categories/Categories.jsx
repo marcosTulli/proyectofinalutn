@@ -1,7 +1,5 @@
 import * as React from "react";
-import { styled, alpha } from "@mui/material/styles";
 import Button from "@mui/material/Button";
-import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import SportsBasketballIcon from "@mui/icons-material/SportsBasketball";
@@ -9,51 +7,11 @@ import MusicNoteSharpIcon from "@mui/icons-material/MusicNoteSharp";
 import LocalMoviesSharpIcon from "@mui/icons-material/LocalMoviesSharp";
 import TheaterComedySharpIcon from "@mui/icons-material/TheaterComedySharp";
 import { useNavigate } from "react-router-dom";
+import StyledMenu from "./StyledMenu";
 
-const StyledMenu = styled((props) => (
-  <Menu
-    elevation={0}
-    anchorOrigin={{
-      vertical: "bottom",
-      horizontal: "right",
-    }}
-    transformOrigin={{
-      vertical: "top",
-      horizontal: "right",
-    }}
-    {...props}
-  />
-))(({ theme }) => ({
-  "& .MuiPaper-root": {
-    borderRadius: 6,
-    marginTop: theme.spacing(1),
-    minWidth: 180,
-    color:
-      theme.palette.mode === "light"
-        ? "rgb(55, 65, 81)"
-        : theme.palette.grey[300],
-    boxShadow:
-      "rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px",
-    "& .MuiMenu-list": {
-      padding: "4px 0",
-    },
-    "& .MuiMenuItem-root": {
-      "& .MuiSvgIcon-root": {
-        fontSize: 18,
-        color: theme.palette.text.secondary,
-        marginRight: theme.spacing(1.5),
-      },
-      "&:active": {
-        backgroundColor: alpha(
-          theme.palette.primary.main,
-          theme.palette.action.selectedOpacity
-        ),
-      },
-    },
-  },
-}));
+// TODO: Que cuando se hace click en la categoria, el usuario vea los eventos de  esa categoria. Si no hay eventos, mostrar un mensaje que diga algo como " No hay eventos disponibles todavia"
 
-export default function CustomizedMenus() {
+const CategoriesMenu = () => {
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -66,7 +24,7 @@ export default function CustomizedMenus() {
 
   const handleConcertClick = () => {
     handleClose();
-    navigate("/events");
+    navigate("/event");
   };
 
   return (
@@ -109,4 +67,6 @@ export default function CustomizedMenus() {
       </StyledMenu>
     </div>
   );
-}
+};
+
+export default CategoriesMenu;
