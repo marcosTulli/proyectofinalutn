@@ -1,20 +1,89 @@
+DONE:
+
+
+
+
 TODO: 
 
 -  Un usuario debe poder ingresar como visitante o mediante un login y navegar por
 -  los componentes.
+
+Crear una pagina de compra de tickets
+Crear una pagina principal con boton de login
+
+Paginas a crear: 
+
+ - Index  /
+ - Lista de eventos   /events
+ - Item /item
+ - Cart /cart
+ - Confirm /confirm
+
+
+ - Index: 
+
+Mostrar el log in.  
+Una vez que el usuario hace log in, mostrar las categorias. 
+
+Cuando un usuario selecciona una categoria es llevado a la pagina de eventos
+
+ - Eventos: 
+
+Mostrar una tabla/lista de eventos disponibles.  
+Cada fila tendra una foto, precio, fecha, nombre del artista, nombre del tour y un boton para agregar al carrito
+
+Al hacer click en la foto de cada item, el usuario sera direccionado a la pagina especifica de ese artista 
+
+ - Item: 
+
+Va a contener un boton para volver a eventos o a la pagina principal 
+Informacion del artista en forma de card? 
+
+ - Cart: 
+
+Detalle de la compra
+Posibilidad de agregar o restar entradas 
+Formulario
+Boton de comprar
+
+- Confirm
+
+Confirmacion de compra 
+Boton para volver a inicio
+
+
+
+-  Inicio: Al momento de ingresar a la app en la ruta base ‘/’
+-  Acceder a un menú desplegable que contendrá las categorías.
+
+Crear 4 categorias: 
+                     - Conciertos
+                     - Deportes
+                     - Cine
+                     - Teatro
+
+Solo la categoria de Conciertos va a tener items a mostrar.
+
+
 -  Si hay productos o imágenes, se debe poder ver la descripción, foto y precio e
    ingresarlo al carrito si se puede comprar.
+
+Crear una tabla con eventos disponibles
+
 -  Debe tener al menos un formulario (login, contacto, suscripción, compra).
+
+El formulario va a estar antes del checkout
+
 -  Utilizar al menos 8 componentes.
 -  Utilizar estados, hooks, eventos, props.
 -  Deberá realizar al menos 2 llamadas a una API para obtener datos.
 
--  Inicio: Al momento de ingresar a la app en la ruta base ‘/’
+La api esta creada con  express y sqlite3
+
 -  Visualizar (como mínimo) un set de ítems disponibles para la compra o
    información.
 -  Contar con algún acceso visible a la vista de carrito que debe alojarse en
    el route /cart.
--  Acceder a un menú desplegable que contendrá las categorías.
 -  Al clickear en una, debe navegar a la lista de productos o información de
    la misma mediante un route /categories.
 -  Flow: Al clickear un ítem del listado debe navegar a la ruta /item, y ver la
@@ -27,6 +96,8 @@ TODO:
 -  Items con sus cantidades.
 -  Total de la orden.
 -  Formulario para nombre, apellido y teléfono u otros datos necesarios.
+
+Material UI
 
 
 Se puede incluir:
@@ -42,6 +113,7 @@ Se puede incluir:
 -  AddItemButton
 -  Checkout
 -  Brief (detalle de compra)
+
 
 
 
