@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { EventListItem } from "../EventListItem";
-import { Header } from "../../Header";
 
 const Eventlist = () => {
   const [events, setEvents] = useState([]);
@@ -16,7 +15,6 @@ const Eventlist = () => {
   return (
     <div className="container" id="eventtable">
       <div className="container">
-        <Header />
         <table className="table mt-5">
           <thead>
             <tr>

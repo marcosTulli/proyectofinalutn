@@ -5,10 +5,12 @@ import { Events } from "./pages/Events";
 import { Item } from "./pages/Item";
 import { Cart } from "./pages/Cart";
 import { Confirm } from "./pages/Confirm";
+import { Header } from "./components/Header";
 
 function App() {
   return (
     <Router>
+      <Header />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/events" element={<Events />} />

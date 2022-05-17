@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CartStore from "../../utils/CartStore";
 import { ShoppingCartItem } from "../ShoppingCartItem";
-import { Header } from "../Header";
 
 function Shoppingcart() {
   const navigate = useNavigate();
@@ -39,7 +38,6 @@ function Shoppingcart() {
 
   return (
     <div className="container" id="carttable">
-      <Header />
       <table className="table mt-5">
         <thead>
           <tr>
