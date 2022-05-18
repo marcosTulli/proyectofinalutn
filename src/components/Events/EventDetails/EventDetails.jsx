@@ -1,11 +1,12 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const EventInfo = () => {
   let { id } = useParams();
   const [event, setEvent] = React.useState(null);
-  const [error, setError] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
+
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     setLoading(true);
@@ -14,11 +15,12 @@ const EventInfo = () => {
       .then((response) => {
         setEvent(response.event);
       })
-      .catch((err) => {
-        setError(true);
-      })
       .finally(() => setLoading(false));
   }, [id]);
+
+  const handleClick = () => {
+    navigate("/events");
+  };
 
   if (loading) return <h1>loading....</h1>;
 
@@ -29,8 +31,10 @@ const EventInfo = () => {
         <h1>{event.artist}</h1>
         <h1>{event.name}</h1>
         <h1>${event.price}</h1>
+        <h1>{event.venue}</h1>
         <p>{event.description}</p>
         <img src={event.imgUrl} alt="cover" />
+        <button onClick={handleClick}>Back to events</button>
       </div>
     )
   );
