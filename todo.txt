@@ -2,7 +2,6 @@ DONE:
 
 
 TODO: 
--  Crear una pagina principal con boton de login
 -  Style
 -  Responsive
 -  Un usuario debe poder ingresar como visitante o mediante un login y navegar por
@@ -11,10 +10,3 @@ TODO:
    - Mostrar el log in.  
    - Una vez que el usuario hace log in, mostrar las categorias. 
    - Informacion del artista en forma de card? 
- - Cart: 
-   - Formulario
--  Debe tener al menos un formulario (login, contacto, suscripción, compra).
-   - El formulario va a estar antes del checkout
--  Checkout mínimo:
--  Formulario para nombre, apellido y teléfono u otros datos necesarios.
-

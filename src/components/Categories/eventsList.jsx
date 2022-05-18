@@ -5,13 +5,23 @@ import TheaterComedySharpIcon from "@mui/icons-material/TheaterComedySharp";
 
 const eventsList = [
   {
+    id: 2,
+    label: "Sports",
+    type: "sports",
+    icon: <SportsBasketballIcon />,
+  },
+  {
     id: 1,
     label: "Concerts",
     type: "concerts",
     icon: <MusicNoteSharpIcon />,
   },
-  { id: 2, label: "Sports", type: "sports", icon: <SportsBasketballIcon /> },
-  { id: 3, label: "Movies", type: "movies", icon: <LocalMoviesSharpIcon /> },
+  {
+    id: 3,
+    label: "Movies",
+    type: "movies",
+    icon: <LocalMoviesSharpIcon />,
+  },
   {
     id: 4,
     label: "Theater",

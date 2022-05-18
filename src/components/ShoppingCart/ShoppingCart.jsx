@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CartStore from "../../utils/CartStore";
 import { ShoppingCartItem } from "../ShoppingCartItem";
+import { CheckoutForm } from "./../CheckoutForm";
 
 function Shoppingcart() {
   const navigate = useNavigate();
@@ -28,10 +29,6 @@ function Shoppingcart() {
     }
   };
 
-  let handleOrderClick = () => {
-    CartStore.dispatch({ type: "clear" });
-    navigate("/confirm");
-  };
   let handleBackClick = () => {
     navigate("/concerts");
   };
@@ -60,18 +57,9 @@ function Shoppingcart() {
             <ShoppingCartItem event={item} key={item.id} />
           ))}
         </tbody>
+        <div> Total: ${totalAmount}</div>
         <tfoot>
-          <tr className="align-middle">
-            <td colSpan="5" className="text-center">
-              <button
-                type="button"
-                id="btnOrder"
-                onClick={handleOrderClick}
-                className="btn btn-primary btn-primary-themed btn-md font-upper">
-                Order for ${totalAmount}
-              </button>
-            </td>
-          </tr>
+          <CheckoutForm />
         </tfoot>
       </table>
     </div>
