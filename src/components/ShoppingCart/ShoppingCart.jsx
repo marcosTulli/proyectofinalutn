@@ -9,6 +9,10 @@ function Shoppingcart() {
   const [cart, setCart] = useState([]);
   const [totalAmount, setTotalAmount] = useState(0);
 
+  let cartIsEmpty = () => {
+    return cart.length === 0;
+  };
+
   let updateCart = () => {
     const state = CartStore.getState();
     if (state) {
@@ -28,6 +32,9 @@ function Shoppingcart() {
     CartStore.dispatch({ type: "clear" });
     navigate("/confirm");
   };
+  let handleBackClick = () => {
+    navigate("/events");
+  };
 
   useEffect(() => {
     updateCart();
@@ -36,7 +43,7 @@ function Shoppingcart() {
     });
   }, []);
 
-  return (
+  return !cartIsEmpty() ? (
     <div className="container" id="carttable">
       <table className="table mt-5">
         <thead>
@@ -67,6 +74,21 @@ function Shoppingcart() {
           </tr>
         </tfoot>
       </table>
+    </div>
+  ) : (
+    <div>
+      <h1 style={{ paddingTop: "5rem" }}> The cart is empty</h1>
+      <tr className="align-middle">
+        <td colSpan="5" className="text-center">
+          <button
+            type="button"
+            id="btnOrder"
+            onClick={handleBackClick}
+            className="btn btn-primary btn-primary-themed btn-md font-upper">
+            Back to events
+          </button>
+        </td>
+      </tr>
     </div>
   );
 }

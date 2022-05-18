@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 const EventInfo = () => {
   let { id } = useParams();
-  const [event, setEvent] = React.useState(null);
-  const [loading, setLoading] = React.useState(false);
+  const [event, setEvent] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
-  React.useEffect(() => {
+  useEffect(() => {
     setLoading(true);
     fetch(`http://localhost:3333/events/${id}`)
       .then((response) => response.json())
