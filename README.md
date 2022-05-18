@@ -8,7 +8,6 @@
   - Ejecutar el comando: node index.js
 
 - FrontEnd
-  - Abrir otra terminal en la carpeta ./App
   - Ejecutar el comando: yarn
   - Ejecutar el comando: yarn start
 
