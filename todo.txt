@@ -2,7 +2,6 @@ DONE:
 
 
 TODO: 
-
 -  Crear una pagina principal con boton de login
 -  Style
 -  Responsive
@@ -11,24 +10,11 @@ TODO:
 -  Index: 
    - Mostrar el log in.  
    - Una vez que el usuario hace log in, mostrar las categorias. 
--  Cuando un usuario selecciona una categoria es llevado a la pagina de eventos
--  Eventos: 
-   - Al hacer click en la foto de cada item, el usuario sera direccionado a la pagina especifica de ese artista 
- - Item: 
-   - Va a contener un boton para volver a eventos o a la pagina principal 
    - Informacion del artista en forma de card? 
  - Cart: 
    - Formulario
 -  Debe tener al menos un formulario (login, contacto, suscripción, compra).
    - El formulario va a estar antes del checkout
--  Al clickear en una, debe navegar a la lista de productos o información de
-   la misma mediante un route /categories.
--  Flow: Al clickear un ítem del listado debe navegar a la ruta /item, y ver la
-   descripción del producto (foto, precio, selector de cantidad). Si se ingresa a
-   /item y el producto no existe, debemos responder un mensaje adecuado que
-   indique algo relacionado a que el producto no existe.
--  El cart debe ser accesible durante toda la experiencia y tener una indicación de
-   la cantidad de items incluidos agregados.
 -  Checkout mínimo:
 -  Formulario para nombre, apellido y teléfono u otros datos necesarios.
 

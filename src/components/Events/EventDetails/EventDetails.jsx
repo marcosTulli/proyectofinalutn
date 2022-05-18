@@ -33,7 +33,7 @@ const EventInfo = () => {
         <h1>${event.price}</h1>
         <h1>{event.venue}</h1>
         <p>{event.description}</p>
-        <img src={event.imgUrl} alt="cover" />
+        <img src={event.bandimageUrl} alt="cover" />
         <button onClick={handleClick}>Back to events</button>
       </div>
     )
