@@ -19,7 +19,7 @@ const EventInfo = () => {
   }, [id]);
 
   const handleClick = () => {
-    navigate("/events");
+    navigate("/concerts");
   };
 
   if (loading) return <h1>loading....</h1>;
@@ -33,7 +33,7 @@ const EventInfo = () => {
         <h1>${event.price}</h1>
         <h1>{event.venue}</h1>
         <p>{event.description}</p>
-        <img src={event.bandimageUrl} alt="cover" />
+        <img src={event.imageUrl} alt="cover" />
         <button onClick={handleClick}>Back to events</button>
       </div>
     )
