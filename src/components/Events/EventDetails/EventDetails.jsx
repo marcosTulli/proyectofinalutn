@@ -1,8 +1,7 @@
 import React from "react";
-import { EventInfo } from "../../components/Events/EventInfo";
 import { useParams } from "react-router-dom";
 
-const Item = () => {
+const EventInfo = () => {
   let { id } = useParams();
   const [event, setEvent] = React.useState(null);
   const [error, setError] = React.useState(false);
@@ -27,15 +26,14 @@ const Item = () => {
     !loading &&
     event && (
       <div style={{ paddingTop: "5em" }}>
-        <h1>{id}</h1>
+        <h1>{event.artist}</h1>
         <h1>{event.name}</h1>
-        <h1>{event.price}</h1>
-        <h1>{event.imgUrl}</h1>
-        <h1>{id}</h1>
-        {/* <EventInfo /> */}
+        <h1>${event.price}</h1>
+        <p>{event.description}</p>
+        <img src={event.imgUrl} alt="cover" />
       </div>
     )
   );
 };
 
-export default Item;
+export default EventInfo;

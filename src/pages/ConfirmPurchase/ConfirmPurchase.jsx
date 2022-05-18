@@ -1,6 +1,6 @@
 import React from "react";
 
-const Confirm = () => {
+const ConfirmPurchase = () => {
   return (
     <div>
       <div className="jumbotron p-5">
@@ -13,4 +13,4 @@ const Confirm = () => {
   );
 };
 
-export default Confirm;
+export default ConfirmPurchase;

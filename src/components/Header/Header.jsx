@@ -22,7 +22,9 @@ const Header = () => {
   }, []);
 
   return (
-    <nav className="navbar navbar-expand navbar-dark fixed-top bg-dark">
+    <nav
+      className="navbar navbar-expand navbar-dark fixed-top bg-dark"
+      style={{ marginBottom: "5rem" }}>
       <div className="container-fluid">
         <div className="collapse navbar-collapse">
           <ul className="navbar-nav me-auto ms-3 mb-2 mb-lg-0">

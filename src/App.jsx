@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Main } from "./pages/Main";
-import { Event } from "./pages/Event";
-import { Item } from "./pages/Item";
+import { Home } from "./pages/Home";
+import { Events } from "./pages/Events";
+import { EventInfo } from "./pages/EventInfo";
 import { Cart } from "./pages/Cart";
-import { Confirm } from "./pages/Confirm";
+import { ConfirmPurchase } from "./pages/ConfirmPurchase";
 import { Header } from "./components/Header";
 
 function App() {
@@ -12,11 +12,11 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/event" element={<Event />} />
-        <Route path="/event/:id" element={<Item />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/event/:id" element={<EventInfo />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/confirm" element={<Confirm />} />
+        <Route path="/confirm" element={<ConfirmPurchase />} />
       </Routes>
     </Router>
   );

@@ -24,7 +24,7 @@ const CategoriesMenu = () => {
 
   const handleConcertClick = () => {
     handleClose();
-    navigate("/event");
+    navigate("/events");
   };
 
   return (
