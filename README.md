@@ -8,8 +8,11 @@
   - Ejecutar el comando: node index.js
 
 - FrontEnd
+
   - Ejecutar el comando: yarn
   - Ejecutar el comando: yarn start
+
+- Node Version 16.14.2
 
 ## Requisitos del proyecto:
 
