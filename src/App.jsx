@@ -6,10 +6,7 @@ import { Cart } from "./pages/Cart";
 import { ConfirmPurchase } from "./pages/ConfirmPurchase";
 import { Header } from "./components/Header";
 import { Concerts } from "./pages/Concerts";
-import { Sports } from "./pages/Sports";
-import { Movies } from "./pages/Movies";
-import { Theater } from "./pages/Theater";
-import { NoUpCommingEvents } from "./pages/NoUpcommingEvents";
+import { NoUpcommingEvents } from "./pages/NoUpcommingEvents";
 
 function App() {
   return (
@@ -21,6 +18,7 @@ function App() {
         <Route path="/event/:id" element={<EventInfo />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/confirm" element={<ConfirmPurchase />} />
+        <Route path="*" element={<NoUpcommingEvents />} />
       </Routes>
     </Router>
   );

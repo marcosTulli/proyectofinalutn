@@ -33,7 +33,7 @@ function Shoppingcart() {
     navigate("/confirm");
   };
   let handleBackClick = () => {
-    navigate("/events");
+    navigate("/concerts");
   };
 
   useEffect(() => {

@@ -109,6 +109,13 @@ const CartReducer = async (state = { cart: [] }, action) => {
         ...state,
         cart: cart,
       };
+
+    case "login":
+      return {
+        ...state,
+        user: action.payload.user,
+      };
+
     default:
       return {
         ...state,

@@ -12,10 +12,10 @@ import StyledMenu from "./StyledMenu";
 // TODO: Que cuando se hace click en la categoria, el usuario vea los eventos de  esa categoria. Si no hay eventos, mostrar un mensaje que diga algo como " No hay eventos disponibles todavia"
 
 const eventsList = [
-  { id: 1, type: "concerts", hasContent: false },
-  { id: 2, type: "sports", hasContent: false },
-  { id: 3, type: "movies", hasContent: false },
-  { id: 4, type: "theater", hasContent: false },
+  { label: "Concerts", id: 1, type: "concerts", hasContent: false },
+  { label: "Sports", id: 2, type: "sports", hasContent: false },
+  { label: "Movies", id: 3, type: "movies", hasContent: false },
+  { label: "Theater", id: 4, type: "theater", hasContent: false },
 ];
 
 const CategoriesMenu = () => {
@@ -29,9 +29,9 @@ const CategoriesMenu = () => {
     setAnchorEl(null);
   };
 
-  const handleConcertClick = () => {
+  const handleItemClick = (header) => {
     handleClose();
-    navigate("/concerts");
+    navigate(`/${header}`);
   };
 
   return (
@@ -56,7 +56,11 @@ const CategoriesMenu = () => {
         open={open}
         onClose={handleClose}>
         {eventsList.map((eventsList) => (
-          <MenuItem key={eventsList.id}>{eventsList.type}</MenuItem>
+          <MenuItem
+            key={eventsList.id}
+            onClick={() => handleItemClick(eventsList.type)}>
+            {eventsList.label}
+          </MenuItem>
         ))}
         {/* <MenuItem onClick={handleClose}>
           <SportsBasketballIcon />

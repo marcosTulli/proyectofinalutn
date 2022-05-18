@@ -13,6 +13,7 @@ const EventInfo = () => {
     fetch(`http://localhost:3333/events/${id}`)
       .then((response) => response.json())
       .then((response) => {
+        console.log("response", response.event);
         setEvent(response.event);
       })
       .finally(() => setLoading(false));
@@ -23,7 +24,6 @@ const EventInfo = () => {
   };
 
   if (loading) return <h1>loading....</h1>;
-
   return (
     !loading &&
     event && (
@@ -33,7 +33,7 @@ const EventInfo = () => {
         <h1>${event.price}</h1>
         <h1>{event.venue}</h1>
         <p>{event.description}</p>
-        <img src={event.imageUrl} alt="cover" />
+        <img src={event.bandimageUrl} alt="cover" />
         <button onClick={handleClick}>Back to events</button>
       </div>
     )
