@@ -2,23 +2,14 @@ import * as React from "react";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import SportsBasketballIcon from "@mui/icons-material/SportsBasketball";
-import MusicNoteSharpIcon from "@mui/icons-material/MusicNoteSharp";
-import LocalMoviesSharpIcon from "@mui/icons-material/LocalMoviesSharp";
-import TheaterComedySharpIcon from "@mui/icons-material/TheaterComedySharp";
 import { useNavigate } from "react-router-dom";
 import StyledMenu from "./StyledMenu";
+import eventsList from "./eventsList";
 
 // TODO: Que cuando se hace click en la categoria, el usuario vea los eventos de  esa categoria. Si no hay eventos, mostrar un mensaje que diga algo como " No hay eventos disponibles todavia"
 
-const eventsList = [
-  { label: "Concerts", id: 1, type: "concerts", hasContent: false },
-  { label: "Sports", id: 2, type: "sports", hasContent: false },
-  { label: "Movies", id: 3, type: "movies", hasContent: false },
-  { label: "Theater", id: 4, type: "theater", hasContent: false },
-];
-
 const CategoriesMenu = () => {
+  const events = eventsList;
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -55,29 +46,14 @@ const CategoriesMenu = () => {
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}>
-        {eventsList.map((eventsList) => (
+        {events.map((events) => (
           <MenuItem
-            key={eventsList.id}
-            onClick={() => handleItemClick(eventsList.type)}>
-            {eventsList.label}
+            key={events.id}
+            onClick={() => handleItemClick(events.type)}>
+            {events.icon}
+            {events.label}
           </MenuItem>
         ))}
-        {/* <MenuItem onClick={handleClose}>
-          <SportsBasketballIcon />
-          Sports
-        </MenuItem>
-        <MenuItem onClick={handleConcertClick}>
-          <MusicNoteSharpIcon />
-          Concerts
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          <LocalMoviesSharpIcon />
-          Movies
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          <TheaterComedySharpIcon />
-          Theater
-        </MenuItem> */}
       </StyledMenu>
     </div>
   );
