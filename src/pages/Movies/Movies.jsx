@@ -1,16 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { EventListItem } from "../EventListItem";
 
-const Concerts = () => {
+const Movies = () => {
   const [events, setEvents] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:3333/events").then((response) =>
-      response.json().then((data) => {
-        setEvents(data);
-      })
-    );
-  }, []);
+  console.log(events.length);
 
   return (
     <div className="container" id="eventtable">
@@ -26,14 +18,10 @@ const Concerts = () => {
               <th scope="col"></th>
             </tr>
           </thead>
-          <tbody>
-            {events.map((event) => (
-              <EventListItem event={event} key={event.id} />
-            ))}
-          </tbody>
+          <tbody></tbody>
         </table>
       </div>
     </div>
   );
 };
-export default Concerts;
+export default Movies;

@@ -11,6 +11,13 @@ import StyledMenu from "./StyledMenu";
 
 // TODO: Que cuando se hace click en la categoria, el usuario vea los eventos de  esa categoria. Si no hay eventos, mostrar un mensaje que diga algo como " No hay eventos disponibles todavia"
 
+const eventsLists = [
+  { id: 1, type: "concerts", hasContent: false },
+  { id: 2, type: "sports", hasContent: false },
+  { id: 3, type: "movies", hasContent: false },
+  { id: 4, type: "theater", hasContent: false },
+];
+
 const CategoriesMenu = () => {
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -24,7 +31,7 @@ const CategoriesMenu = () => {
 
   const handleConcertClick = () => {
     handleClose();
-    navigate("/events");
+    navigate("/concerts");
   };
 
   return (
