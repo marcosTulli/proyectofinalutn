@@ -31,7 +31,7 @@
 - Checkout mínimo:
   - Items con sus cantidades.
   - Total de la orden.
-  - Formulario para nombre, apellido y teléfono u otros datos necesarios.
+    -Formulario para nombre, apellido y teléfono u otros datos necesarios.
 
 ### FLOW:
 

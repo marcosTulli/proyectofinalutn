@@ -8,6 +8,7 @@ const Concerts = () => {
     fetch("http://localhost:3333/events").then((response) =>
       response.json().then((data) => {
         setEvents(data);
+        console.log(data);
       })
     );
   }, []);

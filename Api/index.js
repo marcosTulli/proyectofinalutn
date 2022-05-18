@@ -44,6 +44,28 @@ app.get("/events", (req, res) => {
   });
 });
 
+app.get("/events/:id", (req, res) => {
+  const id = req.params?.id;
+  if (!id) {
+    res.status(500).send({
+      error: true,
+      msg: "No event ID provided",
+      event: null,
+    });
+  }
+  let sql = `SELECT * FROM event WHERE ID=${id}`;
+  db.all(sql, (err, rows) => {
+    // todo: catche rror
+    if (err) {
+      return res.status(404).send({
+        error: true,
+        msg: "Not found",
+        event: null,
+      });
+    }
+    res.status(200).send({ event: rows[0] });
+  });
+});
 app.get("/cart", (req, res) => {
   if (req.header("X-SESSION-TOKEN")) {
     let sql =

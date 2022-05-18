@@ -1,7 +1,13 @@
 import React from "react";
 import CartStore from "../../../utils/CartStore";
+import { useNavigate } from "react-router-dom";
 
 const EventListItem = ({ event }) => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(`/event/${event.id}`);
+  };
+
   return (
     <tr className="align-middle">
       <td>
@@ -10,6 +16,7 @@ const EventListItem = ({ event }) => {
           className="img-fluid max-100"
           src={event.imgUrl}
           alt="Cover"
+          onClick={handleClick}
         />
       </td>
       <td className="max-50">{new Date(event.date).toLocaleString()}</td>
