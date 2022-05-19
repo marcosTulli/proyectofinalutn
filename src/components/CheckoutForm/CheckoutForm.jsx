@@ -4,6 +4,11 @@ import CartStore from "../../utils/CartStore";
 
 const CheckoutForm = () => {
   const navigate = useNavigate();
+
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+
   const [cart, setCart] = useState([]);
   const [totalAmount, setTotalAmount] = useState(0);
 
@@ -27,7 +32,8 @@ const CheckoutForm = () => {
     }
   };
 
-  let handleOrderClick = () => {
+  let handleSubmit = (e) => {
+    e.preventDefault();
     CartStore.dispatch({ type: "clear" });
     navigate("/confirm");
   };
@@ -41,7 +47,7 @@ const CheckoutForm = () => {
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div class="form-group">
           <label for="exampleInputEmail1">Full Name</label>
           <input
@@ -50,6 +56,8 @@ const CheckoutForm = () => {
             id="exampleInputName1"
             aria-describedby="emailHelp"
             placeholder="Enter your name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
         </div>
         <div class="form-group">
@@ -60,6 +68,8 @@ const CheckoutForm = () => {
             id="exampleInputTelephone1"
             aria-describedby="telephoneHelp"
             placeholder="Enter Telephone"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
           />
         </div>
         <div class="form-group">
@@ -70,6 +80,8 @@ const CheckoutForm = () => {
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             placeholder="Enter email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div class="form-check">
@@ -80,10 +92,11 @@ const CheckoutForm = () => {
         </div>
         <br />
         <button
+          disabled={!name || !phone || !email}
           class="btn btn-primary"
           type="button"
           id="btnOrder"
-          onClick={handleOrderClick}
+          onClick={handleSubmit}
           className="btn btn-primary btn-primary-themed btn-md font-upper">
           Order
         </button>

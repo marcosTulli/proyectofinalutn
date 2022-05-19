@@ -1,12 +1,3 @@
-DONE:
+TODO:
 
 
-TODO: 
--  Style
--  Responsive
--  Un usuario debe poder ingresar como visitante o mediante un login y navegar por
-   los componentes.
--  Index: 
-   - Mostrar el log in.  
-   - Una vez que el usuario hace log in, mostrar las categorias. 
-   - Informacion del artista en forma de card? 

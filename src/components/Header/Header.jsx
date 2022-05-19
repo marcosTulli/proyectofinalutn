@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import CartStore from "../../utils/CartStore";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import CategoriesMenu from "../Categories/Categories";
-import { UnarchiveSharp } from "@material-ui/icons";
 
 const Header = () => {
   const [itemCount, setItemCount] = useState(0);
