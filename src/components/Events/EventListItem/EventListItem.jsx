@@ -19,7 +19,7 @@ const EventListItem = ({ event }) => {
           onClick={handleClick}
         />
       </td>
-      <td className="max-50">{new Date(event.date).toLocaleString()}</td>
+      <td className="max-50">{event.date}</td>
       <td className="max-50">{event.name}</td>
       <td className="max-50">{event.artist}</td>
       <td className="max-50">${event.price}</td>

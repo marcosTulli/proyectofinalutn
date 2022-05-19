@@ -16,7 +16,7 @@ const Concerts = () => {
   return (
     <div className="container" id="eventtable">
       <div className="container">
-        <table className="table mt-5">
+        <table className="table mt-5 table-responsive">
           <thead>
             <tr>
               <th scope="col"></th>
