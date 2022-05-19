@@ -14,27 +14,15 @@ const Concerts = () => {
 
   console.log(events.length);
   return (
-    <div className="container" id="eventtable">
+    <section className="bg-light py-4 my-5">
       <div className="container">
-        <table className="table mt-5 table-responsive">
-          <thead>
-            <tr>
-              <th scope="col"></th>
-              <th scope="col">Date</th>
-              <th scope="col">Name</th>
-              <th scope="col">Artist</th>
-              <th scope="col">Price</th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody>
-            {events.map((event) => (
-              <EventListItem event={event} key={event.id} />
-            ))}
-          </tbody>
-        </table>
+        <div className="row">
+          {events.map((event) => (
+            <EventListItem event={event} key={event.id} />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 export default Concerts;
