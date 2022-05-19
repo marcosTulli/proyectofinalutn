@@ -33,38 +33,80 @@ const EventInfo = () => {
   return (
     !loading &&
     event && (
-      <div style={{ paddingTop: "6rem" }}>
-        <Card sx={{ maxWidth: 345 }}>
-          <CardMedia
-            component="img"
-            height="140"
-            image={event.bandimageUrl}
-            alt={event.name}
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              {event.artist}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              {event.description}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Tour {event.name}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              <strong>Ticket Price ${event.price}</strong>
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small" onClick={handleClick}>
-              Back to events
-            </Button>
-            <a rel="noreferrer" href={event.site} target="_blank">
-              <Button size="small">Website</Button>
-            </a>
-          </CardActions>
-        </Card>
+      <div className="col-md-6 col-lg-4">
+        <div className="card my-3">
+          <div className="card-thumbnail">
+            <img
+              className="img-fluid"
+              height="140"
+              src={event.bandimageUrl}
+              alt={event.name}
+            />
+          </div>
+          <div className="card-body">
+            <h3 className="card-title">{event.artist}</h3>
+            <p className="card-text">{event.description}</p>
+            <p className="card-text">Date: {event.date}</p>
+            <p className="card-text">Price: ${event.price}</p>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-around",
+                paddingTop: "1em",
+              }}>
+              <button
+                type="button"
+                className="btn btn-primary btn-primary-themed btn-md font-upper"
+                onClick={handleClick}>
+                Back to events
+              </button>
+              <a rel="noreferrer" href={event.site} target="_blank">
+                <button
+                  className="btn btn-primary btn-primary-themed btn-md font-upper"
+                  type="button"
+                  size="small">
+                  Website
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
+
+      // !loading &&
+      // event && (
+      //   <div style={{ paddingTop: "6rem" }}>
+      //     <Card sx={{ maxWidth: 345 }}>
+      //       <CardMedia
+      //         component="img"
+      //         height="140"
+      //         image={event.bandimageUrl}
+      //         alt={event.name}
+      //       />
+      //       <CardContent>
+      //         <Typography gutterBottom variant="h5" component="div">
+      //           {event.artist}
+      //         </Typography>
+      //         <Typography variant="body2" color="text.secondary">
+      //           {event.description}
+      //         </Typography>
+      //         <Typography variant="body2" color="text.secondary">
+      //           Tour {event.name}
+      //         </Typography>
+      //         <Typography variant="body2" color="text.secondary">
+      //           <strong>Ticket Price ${event.price}</strong>
+      //         </Typography>
+      //       </CardContent>
+      //       <CardActions>
+      //         <Button size="small" onClick={handleClick}>
+      //           Back to events
+      //         </Button>
+      //         <a rel="noreferrer" href={event.site} target="_blank">
+      //           <Button size="small">Website</Button>
+      //         </a>
+      //       </CardActions>
+      //     </Card>
+      // </div>
     )
   );
 };
