@@ -4,7 +4,7 @@ import MenuItem from "@mui/material/MenuItem";
 import classes from "./Menu.module.scss";
 import { useNavigate } from "react-router-dom";
 
-const Menu = () => {
+export const Menu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const events = eventsList;
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const Menu = () => {
     navigate(`/${header}`);
   };
   return (
-    <div className={classes.largeNav}>
+    <div>
       {events.map((events) => (
         <MenuItem key={events.id} onClick={() => handleItemClick(events.type)}>
           {events.icon}
@@ -23,5 +23,3 @@ const Menu = () => {
     </div>
   );
 };
-
-export default Menu;
