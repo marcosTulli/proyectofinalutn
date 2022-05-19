@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
 const EventInfo = () => {
   let { id } = useParams();
@@ -27,14 +33,37 @@ const EventInfo = () => {
   return (
     !loading &&
     event && (
-      <div style={{ paddingTop: "5em" }}>
-        <h1>{event.artist}</h1>
-        <h1>{event.name}</h1>
-        <h1>${event.price}</h1>
-        <h1>{event.venue}</h1>
-        <p>{event.description}</p>
-        <img src={event.bandimageUrl} alt="cover" />
-        <button onClick={handleClick}>Back to events</button>
+      <div style={{ paddingTop: "6rem" }}>
+        <Card sx={{ maxWidth: 345 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image={event.bandimageUrl}
+            alt={event.name}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              {event.artist}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {event.description}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Tour {event.name}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              <strong>Ticket Price ${event.price}</strong>
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button size="small" onClick={handleClick}>
+              Back to events
+            </Button>
+            <a rel="noreferrer" href={event.site} target="_blank">
+              <Button size="small">Website</Button>
+            </a>
+          </CardActions>
+        </Card>
       </div>
     )
   );

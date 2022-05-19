@@ -1,0 +1,37 @@
+$woloxGreen: #93ce1d;
+$woloxBlue2: #2aa4dd;
+$woloxBlue: #2aa7df;
+$white: #fff;
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin lowerThan($value) {
+  @media (max-width: $value) {
+    @content;
+  }
+}
+
+@mixin biggerThan($value) {
+  @media (min-width: $value) {
+    @content;
+  }
+}
+
+@mixin between($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @include between($tablet-width, #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @include biggerThan($desktop-width) {
+    @content;
+  }
+}

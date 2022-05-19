@@ -1,0 +1,53 @@
+@import "../../scss/variables.scss";
+
+%sharedStyles {
+  font-size: 8px;
+  padding: 0.6em 5em 0.6em 5em;
+  border: 1px solid transparent;
+  text-decoration: none;
+  background-color: transparent;
+  font-weight: bold;
+  border-width: 1px;
+  border-radius: 2em;
+  border-style: solid;
+  color: white;
+  border-radius: 2em;
+  border-color: $woloxBlue;
+  outline: none !important;
+  transition: all 0.2 ease-out 0.5;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.6;
+  }
+  @include tablet {
+    font-size: 14px;
+  }
+  @include desktop {
+    font-size: 18px;
+  }
+}
+
+.base {
+  @extend %sharedStyles;
+  color: black;
+  padding: 0.6em 2em 0.6em 2em;
+  border: none;
+  @include desktop {
+    padding: 0.6em 1em 0.6em 1em;
+  }
+}
+
+.primary {
+  @extend %sharedStyles;
+  background-color: $woloxBlue2;
+  padding: 0.6em 3em 0.6em 3em;
+}
+
+.outlined {
+  @extend %sharedStyles;
+}
+
+.outlinedNav {
+  @extend %sharedStyles;
+  color: $woloxBlue;
+}

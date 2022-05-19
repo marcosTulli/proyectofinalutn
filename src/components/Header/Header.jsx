@@ -1,12 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { MdOutlineClose, MdMenu } from "react-icons/md";
+import { useMedia } from "react-media";
+import classes from "./Header.module.scss";
+import { NavLink, useNavigate } from "react-router-dom";
 import CartStore from "../../utils/CartStore";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-import CategoriesMenu from "../Categories/Categories";
+import eventsList from "../Categories/eventsList";
+import MenuItem from "@mui/material/MenuItem";
+import Menu from "../Menu/Menu";
 
-const Header = () => {
+function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
   const [itemCount, setItemCount] = useState(0);
   const [logIn, setLogIn] = useState(false);
+  const events = eventsList;
+  const isMobile = useMedia({ query: "(max-width: 768px)" });
+  const navigate = useNavigate();
+
+  const handleItemClick = (header) => {
+    setMenuOpen(false);
+    navigate(`/${header}`);
+  };
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   useEffect(() => {
     CartStore.subscribe(() => {
@@ -22,52 +38,51 @@ const Header = () => {
     });
   }, []);
 
-  const handleLogin = () => {
-    setLogIn(true);
-  };
-
-  return (
-    <nav
-      className="navbar navbar-expand navbar-dark fixed-top bg-dark"
-      style={{ marginBottom: "5rem" }}>
-      <div className="container-fluid">
-        <div className="collapse navbar-collapse">
-          <ul className="navbar-nav me-auto ms-3 mb-2 mb-lg-0">
-            <li className="nav-item">
-              <NavLink exact to="/" className="navbar-brand">
-                <h1>Get Your Tickets</h1>
-              </NavLink>
-            </li>
-            {!logIn && (
-              <li className="nav-item">
-                <button onClick={handleLogin} className="btn btn-primary">
-                  <h2>login</h2>
-                </button>
-              </li>
-            )}
-          </ul>
-        </div>
-        {logIn && (
-          <div className="collapse navbar-collapse">
-            <ul className="navbar-nav ms-auto me-5 mb-2 mb-lg-0">
-              <li className="nav-item">
-                <NavLink exact to="/cart" className="nav-link">
-                  <AiOutlineShoppingCart className="bi bi-cart-plus-fill text-white font-xxlarge" />
-                  <span className="font-upper font-bold text-white ms-4">
-                    <span className="font-xxlarge align-middle">
-                      {itemCount}
-                    </span>
-                    <span className="align-middle ms-2">Tickets</span>
-                  </span>
-                </NavLink>
-              </li>
-            </ul>
-            <CategoriesMenu />
-          </div>
-        )}
-      </div>
-    </nav>
+  const menuButtons = () => (
+    <div className={classes.largeNav}>
+      {events.map((events) => (
+        <MenuItem key={events.id} onClick={() => handleItemClick(events.type)}>
+          {events.icon}
+          {events.label}
+        </MenuItem>
+      ))}
+    </div>
   );
-};
+  return (
+    <header className={classes.mainheader}>
+      <nav className={classes.nav}>
+        <ul className={classes.list}>
+          <li className={classes.listItem}>
+            <NavLink exact to="/" className="navbar-brand">
+              <span>Get Your Tickets</span>
+            </NavLink>
+          </li>
+          <div>
+            {isMobile ? (
+              <ul className={classes.mobileNav}>
+                <li className={classes.listItem}></li>
+                <li className={classes.listItem}>
+                  <MdMenu onClick={toggleMenu} />
+                </li>
+              </ul>
+            ) : (
+              <Menu />
+              // menuButtons()
+            )}
+          </div>
+        </ul>
+      </nav>
+      {isMobile && menuOpen && (
+        <div className={classes.menu}>
+          <MdOutlineClose
+            className={classes.close}
+            onClick={() => setMenuOpen(false)}
+          />
+          {<Menu />}
+        </div>
+      )}
+    </header>
+  );
+}
 
 export default Header;
