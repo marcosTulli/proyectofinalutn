@@ -1,6 +1,7 @@
 import React from "react";
 import CartStore from "../../../utils/CartStore";
 import { useNavigate } from "react-router-dom";
+import "./EventCard.css";
 
 const EventCard = ({ event }) => {
   const navigate = useNavigate();
@@ -11,9 +12,9 @@ const EventCard = ({ event }) => {
   return (
     <div className="col-md-6 col-lg-4">
       <div style={{ backgroundColor: "gray" }} className="card my-3">
-        <div className="card-thumbnail">
+        <div className="card-thumbnail hover">
           <img
-            className="img-fluid"
+            className="img-fluid "
             src={event.imgUrl}
             alt="Cover"
             onClick={handleClick}

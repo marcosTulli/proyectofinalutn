@@ -50,7 +50,7 @@ function Shoppingcart() {
   };
 
   return !cartIsEmpty() ? (
-    <body>
+    <body style={{ paddingTop: "3em" }}>
       <div className="container mb-4">
         <div className="row pt-2 pb-4">
           <div className="col-lg-8">

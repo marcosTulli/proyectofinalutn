@@ -28,7 +28,7 @@ const EventInfo = () => {
     !loading &&
     event && (
       <div className="col-md-6 col-lg-4">
-        <div style={{ backgroundColor: "black" }} className="card my-3">
+        <div style={{ backgroundColor: "gray" }} className="card my-3">
           <div className="card-thumbnail">
             <img
               className="img-fluid"
