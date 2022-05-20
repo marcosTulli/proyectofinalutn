@@ -9,6 +9,7 @@
 
 - FrontEnd
 
+  - Abrir otra terminal
   - Ejecutar el comando: yarn
   - Ejecutar el comando: yarn start
 
