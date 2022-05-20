@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { EventListItem } from "../../components/Events/EventListItem";
+import EventCard from "../../components/Events/EventCard/EventCard";
 
 const Concerts = () => {
   const [events, setEvents] = useState([]);
@@ -14,11 +14,11 @@ const Concerts = () => {
 
   console.log(events.length);
   return (
-    <section className="bg-light py-4 my-5">
-      <div className="container">
+    <section className="py-4 my-5">
+      <div>
         <div className="row">
           {events.map((event) => (
-            <EventListItem event={event} key={event.id} />
+            <EventCard event={event} key={event.id} />
           ))}
         </div>
       </div>

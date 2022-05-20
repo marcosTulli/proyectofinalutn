@@ -1,15 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import CartStore from "../../utils/CartStore";
 import { ShoppingCartItem } from "../ShoppingCartItem";
-import { CheckoutForm } from "./../CheckoutForm";
 import "./Shopping.css";
 
 function Shoppingcart() {
-  const navigate = useNavigate();
-
   const [cart, setCart] = useState([]);
   const [totalAmount, setTotalAmount] = useState(0);
+  const count = useRef(0);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    count.current += 1;
+  });
+  useEffect(() => {
+    updateCart();
+    CartStore.subscribe(() => {
+      updateCart();
+    });
+  }, []);
 
   let cartIsEmpty = () => {
     return cart.length === 0;
@@ -34,12 +43,11 @@ function Shoppingcart() {
     navigate("/concerts");
   };
 
-  useEffect(() => {
-    updateCart();
-    CartStore.subscribe(() => {
-      updateCart();
-    });
-  }, []);
+  let handleSubmit = (e) => {
+    e.preventDefault();
+    CartStore.dispatch({ type: "clear" });
+    navigate("/confirm");
+  };
 
   return !cartIsEmpty() ? (
     <body>
@@ -143,23 +151,11 @@ function Shoppingcart() {
                       />
                     </div>
                   </div>
-                  <div className="col-md-12 p-0 text-center">
-                    <p className="mb-1 pb-2">Accepted Cards</p>
-                    <img src="payment.png" alt="nothing" className="w-100" />
-                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div className="col-lg-4 pt-1">
-            <div className="row pt-4">
-              <div className="col-8">
-                <h3 className="mb-0 pb-2">Cart</h3>
-              </div>
-              <div className="col-4">
-                <h3 className="mb-0 pb-2">4</h3>
-              </div>
-            </div>
             {cart.map((item) => (
               <ShoppingCartItem event={item} key={item.id} />
             ))}
@@ -177,9 +173,13 @@ function Shoppingcart() {
               <div className="col-12">
                 <div className="form-group form-check"></div>
                 <button
-                  type="submit"
-                  className="btn btn-primary w-100"
-                  style={{ fontSize: "2rem", padding: "0" }}>
+                  // disabled={!name || !phone || !email}
+                  class="btn btn-primary"
+                  style={{ fontSize: "2rem", padding: "0 1em 0 1em" }}
+                  type="button"
+                  id="btnOrder"
+                  onClick={handleSubmit}
+                  className="btn btn-primary btn-primary-themed btn-md font-upper">
                   Order
                 </button>
               </div>

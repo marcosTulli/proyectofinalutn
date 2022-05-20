@@ -2,7 +2,7 @@ import React from "react";
 import CartStore from "../../../utils/CartStore";
 import { useNavigate } from "react-router-dom";
 
-const EventListItem = ({ event }) => {
+const EventCard = ({ event }) => {
   const navigate = useNavigate();
   const handleClick = () => {
     navigate(`/event/${event.id}`);
@@ -10,7 +10,7 @@ const EventListItem = ({ event }) => {
 
   return (
     <div className="col-md-6 col-lg-4">
-      <div className="card my-3">
+      <div style={{ backgroundColor: "gray" }} className="card my-3">
         <div className="card-thumbnail">
           <img
             className="img-fluid"
@@ -25,7 +25,7 @@ const EventListItem = ({ event }) => {
           <p className="card-text">Price: ${event.price}</p>
           <button
             type="button"
-            className="btn btn-primary btn-primary-themed btn-md font-upper"
+            className="btn  btn-md font-upper"
             onClick={() => CartStore.dispatch({ type: "add", payload: event })}>
             Add to Cart
           </button>
@@ -35,4 +35,4 @@ const EventListItem = ({ event }) => {
   );
 };
 
-export default EventListItem;
+export default EventCard;
