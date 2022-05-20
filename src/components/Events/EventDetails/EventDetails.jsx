@@ -28,7 +28,7 @@ const EventInfo = () => {
   return (
     !loading &&
     event && (
-      <div className="col-md-6 col-lg-4">
+      <div className="col-md-6 col-lg-4" style={{ paddingTop: "4em" }}>
         <div style={{ backgroundColor: "gray" }} className="card my-3">
           <div className="card-thumbnail">
             <img

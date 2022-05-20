@@ -71,7 +71,7 @@ function Header() {
                   className="btn"
                   key={events.id}
                   onClick={() => handleItemClick(events.type)}>
-                  {events.icon}
+                  <div style={{ paddingRight: ".5em" }}>{events.icon}</div>
                   {events.label}
                 </span>
               ))}
@@ -87,7 +87,7 @@ function Header() {
               <ul className="navbar-nav ms-auto me-5 mb-2 mb-lg-0">
                 <li className="nav-item">
                   <button onClick={handleLogin} className="btn btn-primary">
-                    <span>Login</span>
+                    <span>Enter as guest</span>
                   </button>
                 </li>
               </ul>
