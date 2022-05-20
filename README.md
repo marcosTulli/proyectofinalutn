@@ -5,6 +5,7 @@
 - API
 
   - Abrir una terminal en la carpeta ./api
+  - Ejecutar el comando: yarn
   - Ejecutar el comando: node index.js
 
 - FrontEnd
