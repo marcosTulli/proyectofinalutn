@@ -173,7 +173,6 @@ function Shoppingcart() {
               <div className="col-12">
                 <div className="form-group form-check"></div>
                 <button
-                  // disabled={!name || !phone || !email}
                   class="btn btn-primary"
                   style={{ fontSize: "2rem", padding: "0 1em 0 1em" }}
                   type="button"
@@ -204,44 +203,5 @@ function Shoppingcart() {
       </tr>
     </div>
   );
-  // return !cartIsEmpty() ? (
-  //   <div className="container" id="carttable">
-  //     <table className="table mt-5">
-  //       <thead>
-  //         <tr>
-  //           <th scope="col">Event</th>
-  //           <th scope="col">Price</th>
-  //           <th scope="col"># Tickets</th>
-  //           <th scope="col">Total</th>
-  //           <th scope="col"></th>
-  //         </tr>
-  //       </thead>
-  //       <tbody>
-  //         {cart.map((item) => (
-  //           <ShoppingCartItem event={item} key={item.id} />
-  //         ))}
-  //       </tbody>
-  //       <div> Total: ${totalAmount}</div>
-  //       <tfoot>
-  //         <CheckoutForm />
-  //       </tfoot>
-  //     </table>
-  //   </div>
-  // ) : (
-  //   <div>
-  //     <h1 style={{ paddingTop: "5rem" }}> The cart is empty</h1>
-  //     <tr className="align-middle">
-  //       <td colSpan="5" className="text-center">
-  //         <button
-  //           type="button"
-  //           id="btnOrder"
-  //           onClick={handleBackClick}
-  //           className="btn btn-primary btn-primary-themed btn-md font-upper">
-  //           Back to events
-  //         </button>
-  //       </td>
-  //     </tr>
-  //   </div>
-  // );
 }
 export default Shoppingcart;
