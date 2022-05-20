@@ -26,7 +26,7 @@ const EventCard = ({ event }) => {
           <p className="card-text">Price: ${event.price}</p>
           <button
             type="button"
-            className="btn  btn-md font-upper"
+            className="btn btn-md font-upper "
             onClick={() => CartStore.dispatch({ type: "add", payload: event })}>
             Add to Cart
           </button>
