@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { Button } from "../../Button";
 
 const EventInfo = () => {
   let { id } = useParams();
@@ -48,19 +49,13 @@ const EventInfo = () => {
                 justifyContent: "space-around",
                 paddingTop: "1em",
               }}>
-              <button
-                type="button"
-                className="btn btn-primary btn-primary-themed btn-md font-upper"
-                onClick={handleClick}>
-                Back to events
-              </button>
+              <Button type="button" onClick={handleClick}>
+                Back
+              </Button>
               <a rel="noreferrer" href={event.site} target="_blank">
-                <button
-                  className="btn btn-primary btn-primary-themed btn-md font-upper"
-                  type="button"
-                  size="small">
+                <Button type="button" size="small">
                   Website
-                </button>
+                </Button>
               </a>
             </div>
           </div>

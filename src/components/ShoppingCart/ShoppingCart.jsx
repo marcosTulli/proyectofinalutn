@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import CartStore from "../../utils/CartStore";
 import { ShoppingCartItem } from "../ShoppingCartItem";
+import { Button } from "../Button";
 import "./Shopping.css";
 
 function Shoppingcart() {
@@ -172,15 +173,14 @@ function Shoppingcart() {
             <div className="row pb-5 pt-4">
               <div className="col-12">
                 <div className="form-group form-check"></div>
-                <button
+                <Button
                   class="btn btn-primary"
                   style={{ fontSize: "2rem", padding: "0 1em 0 1em" }}
                   type="button"
                   id="btnOrder"
-                  onClick={handleSubmit}
-                  className="btn btn-primary btn-primary-themed btn-md font-upper">
+                  onClick={handleSubmit}>
                   Order
-                </button>
+                </Button>
               </div>
             </div>
           </div>
@@ -192,13 +192,13 @@ function Shoppingcart() {
       <h1 style={{ paddingTop: "5rem" }}> The cart is empty</h1>
       <tr className="align-middle">
         <td colSpan="5" className="text-center">
-          <button
+          <Button
             type="button"
             id="btnOrder"
             onClick={handleBackClick}
             className="btn btn-primary btn-primary-themed btn-md font-upper">
             Back to events
-          </button>
+          </Button>
         </td>
       </tr>
     </div>

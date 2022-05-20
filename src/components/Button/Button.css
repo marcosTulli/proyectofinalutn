@@ -1,0 +1,18 @@
+.customButton,
+.customButton:focus,
+.customButton:active {
+  font-size: 15px;
+  padding: 0.6em 5em 0.6em 5em;
+  border: 1px solid transparent;
+  text-decoration: none;
+  background-color: rgb(61, 0, 159);
+  font-weight: bold;
+  border-width: 1px;
+  border-radius: 2em;
+  border-style: solid;
+  color: white;
+  border-radius: 2em;
+  border-color: rgb(61, 0, 159);
+  outline: none !important;
+  transition: all 0.2 ease-out 0.5;
+}

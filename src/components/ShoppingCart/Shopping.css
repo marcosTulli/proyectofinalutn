@@ -62,13 +62,13 @@ p {
   border-radius: 8px;
 }
 
-button {
+/* button {
   background-color: #190042 !important;
   border-color: #190042 !important;
   height: 50px;
   line-height: 50px;
   margin-top: 10px;
-}
+} */
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {

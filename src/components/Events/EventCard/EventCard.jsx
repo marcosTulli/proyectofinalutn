@@ -2,6 +2,7 @@ import React from "react";
 import CartStore from "../../../utils/CartStore";
 import { useNavigate } from "react-router-dom";
 import "./EventCard.css";
+import { Button } from "../../Button";
 
 const EventCard = ({ event }) => {
   const navigate = useNavigate();
@@ -24,12 +25,11 @@ const EventCard = ({ event }) => {
           <h3 className="card-title">{event.artist}</h3>
           <p className="card-text">Date: {event.date}</p>
           <p className="card-text">Price: ${event.price}</p>
-          <button
+          <Button
             type="button"
-            className="btn btn-md font-upper "
             onClick={() => CartStore.dispatch({ type: "add", payload: event })}>
             Add to Cart
-          </button>
+          </Button>
         </div>
       </div>
     </div>
